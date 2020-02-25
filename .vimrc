@@ -28,13 +28,6 @@ set noerrorbells visualbell t_vb=
 " enable file type detection
 filetype plugin indent on
 
-" automatic indentation
-set autoindent
-
-" open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
@@ -85,6 +78,16 @@ set lbr " line break
 set wildmode=longest,list "" tab completion for files/bufferss
 set wildmenu
 set showmatch " highlight matching [{()}]
+set scrolloff=5 " show lines above and below cursor (when possible)
+" open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+set autoindent " automatic indentation
+set cursorline " highlight current line
+set tabstop=4 " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
+set expandtab " tabs are spaces, mainly because of python
+set autochdir " automatically set current directory to directory of last opened file
 
 "---------------------
 " Plugin configuration
@@ -99,6 +102,7 @@ nnoremap <Leader>f :NERDTreeFind<CR>
 """""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1 " show hidden files
 
 " easymotion
 """""""""""""""""""""""""""""""""""""
@@ -122,7 +126,7 @@ let g:markdown_fenced_languages = [
 let g:vim_markdown_conceal = 2
 
 " syntastic
-""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -134,8 +138,21 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
 " incsearch
-""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" jedi-vim
+"""""""""""""""""""""""""""""""""""""
+let g:jedi#force_py_version = 3
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_stubs_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#usages_command = ""
+
+"" vim-mucomplete
+set completeopt+=menuone
+set completeopt+=noselect
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 1
