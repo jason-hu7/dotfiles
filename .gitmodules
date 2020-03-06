@@ -46,3 +46,6 @@
 [submodule "vim/pack/vendor/start/gundo.vim"]
 	path = vim/pack/vendor/start/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/pack/vendor/start/vim-argwrap"]
+	path = vim/pack/vendor/start/vim-argwrap
+	url = https://github.com/FooSoft/vim-argwrap.git
