@@ -44,6 +44,12 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " vim can autodetect this based on $TERM (e.g. 'xterm-256color')
 " but it can be set to force 256 colors
 " set t_Co=256
@@ -97,6 +103,7 @@ set autochdir " automatically set current directory to directory of last opened 
 """""""""""""""""""""""""""""""""""""
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
+let NERDTreeShowHidden=0
 
 " ctrlp
 """""""""""""""""""""""""""""""""""""
@@ -136,6 +143,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+nnoremap <Leader>s :SyntasticCheck<CR>
+nnoremap <Leader>r :SyntasticReset<CR>
+nnoremap <Leader>i :SyntasticInfo<CR>
+nnoremap <Leader>m :SyntasticToggleMode<CR>
 
 " incsearch
 """""""""""""""""""""""""""""""""""""
@@ -150,9 +161,21 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#goto_stubs_command = ""
 let g:jedi#goto_definitions_command = ""
 let g:jedi#usages_command = ""
+let g:jedi#show_call_signatures = "2"
 
 "" vim-mucomplete
-set completeopt+=menuone
-set completeopt+=noselect
+set completeopt-=preview
+set completeopt+=noselect,menuone
 let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#completion_delay = 1
+
+" gundo
+""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>u :GundoToggle<CR>
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
+
+" argwrap
+""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>w :ArgWrap<CR>
