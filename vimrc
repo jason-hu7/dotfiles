@@ -72,11 +72,13 @@ endif
 "----------------------------
 " Basic editing configuration
 "----------------------------
+let g:python_highlight_all = 1
 set number " Show line numbers
 set relativenumber " This enables relative line numbering mode
 set laststatus=2 " Always show the status line at the bottom
 set mouse+=a " Enable mouse support
 set incsearch " Enable searching as you type, rather than waiting till you press enter
+set hlsearch " Hight light all searches
 set hidden " Allow hidding unsaved buffer
 set ignorecase " search case-insensitive when all characters in the string being searched at lowercase
 set smartcase  "case-sensitive if contain capital letters

@@ -52,3 +52,6 @@
 [submodule "vim/pack/vendor/start/vim-buffergator"]
 	path = vim/pack/vendor/start/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vim/pack/vendor/start/python-syntax"]
+	path = vim/pack/vendor/start/python-syntax
+	url = https://github.com/vim-python/python-syntax.git
