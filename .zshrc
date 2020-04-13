@@ -94,7 +94,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
  alias zshconfig="vim ~/.zshrc"
+ alias vimconfig="vim ~/.vimrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
+ alias cp="cp -i"  # protect overwriting
+ alias mv="mv -i"  # protect overwriting
 
 # Source vte.sh in zshrc
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then

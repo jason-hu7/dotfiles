@@ -49,3 +49,6 @@
 [submodule "vim/pack/vendor/start/vim-argwrap"]
 	path = vim/pack/vendor/start/vim-argwrap
 	url = https://github.com/FooSoft/vim-argwrap.git
+[submodule "vim/pack/vendor/start/vim-buffergator"]
+	path = vim/pack/vendor/start/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git

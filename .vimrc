@@ -105,6 +105,11 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 let NERDTreeShowHidden=0
 
+" buffergator
+"""""""""""""""""""""""""""""""""""""
+let g:buffergator_suppress_keymaps = 1
+nnoremap <Leader>b :BuffergatorToggle<CR>
+
 " ctrlp
 """""""""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<c-p>'
